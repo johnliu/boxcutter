@@ -1,0 +1,11 @@
+---
+- hosts: all
+  connection: local
+
+  vars_files:
+    - ../defaults.yml
+
+  tasks:
+    - include_tasks: homebrew.yml
+    - include_tasks: ssh.yml
+    - include_tasks: dotfiles.yml

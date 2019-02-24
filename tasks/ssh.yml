@@ -1,0 +1,27 @@
+---
+- name: Setup SSH keys.
+  command: "{{ item }}"
+  loop:
+    - ssh-keygen -f "~/.ssh/id_rsa" -N ""
+    - ssh-add -K "~/.ssh/id_rsa"
+  args:
+    creates: ~/.ssh/id_rsa
+  register: ssh_key_results
+
+- name: Setup SSH config file.
+  blockinfile:
+    path: ~/.ssh/config
+    create: yes
+    insertbefore: BOF
+    block: |
+      Host *
+          AddKeysToAgent yes
+          UseKeychain yes
+
+- name: Copy ssh key.
+  command: pbcopy < ~/.ssh/id_rsa.pub
+  when: ssh_key_results.changed
+
+- name: Open web page.
+  command: open https://github.com/settings/ssh/new
+  when: ssh_key_results.changed

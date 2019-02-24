@@ -1,0 +1,62 @@
+{
+    "title": "Caps Lock",
+    "rules": [
+        {
+            "description": "Caps Lock -> Spotlight or Escape",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "caps_lock",
+                        "modifiers": {
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                          "key_code": "escape"
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.apple\\.Terminal$",
+                                "^com\\.apple\\.Xcode$",
+                                "^com\\.apple\\.dt\\.Xcode$",
+                                "^com\\.github\\.atom$",
+                                "^com\\.jetbrains\\.*"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": [
+                        {
+                            "key_code": "spacebar",
+                            "modifiers": ["left_command"]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "^com\\.googlecode\\.iterm2$",
+                                "^com\\.apple\\.Terminal$",
+                                "^com\\.apple\\.Xcode$",
+                                "^com\\.apple\\.dt\\.Xcode$",
+                                "^com\\.github\\.atom$",
+                                "^com\\.jetbrains\\.*"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

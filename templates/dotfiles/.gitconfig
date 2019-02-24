@@ -1,0 +1,50 @@
+[user]
+    name = {{ gitconfig_name }}
+    email = {{ gitconfig_email }}
+[github]
+    user = {{ gitconfig_github }}
+
+[core]
+    excludesfile = ~/.gitignore
+    editor = /usr/bin/vim
+    trustctime = false
+    untrackedCache = true
+[push]
+    default = current
+[help]
+    autocorrect = 1
+
+[diff]
+    tool = vimdiff
+    algorithm = histogram
+[difftool]
+    prompt = false
+[mergetool "fugitive"]
+    cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+    tool = fugitive
+[mergetool]
+    prompt = false
+    keepBackup = false
+
+[color]
+    ui = auto
+    diff = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[alias]
+    lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    list = show --pretty="format:" --name-only
+    current = rev-parse --abbrev-ref HEAD

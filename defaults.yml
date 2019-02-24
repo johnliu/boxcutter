@@ -1,0 +1,10 @@
+---
+
+# General
+computer_name: cinnamon
+is_hackintosh: yes
+
+# git config
+gitconfig_name: John Liu
+gitconfig_email: johnyuhanliu@gmail.com
+gitconfig_github: johnliu

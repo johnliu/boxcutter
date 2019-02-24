@@ -1,0 +1,56 @@
+---
+- name: Get dotfiles to copy.
+  find:
+    paths: ../templates/dotfiles
+    recurse: yes
+    hidden: yes
+    file_type: any
+  register: dotfiles_result
+
+- name: Ensure directories are created.
+  file:
+    path: "~/{{ item.path | relpath('../templates/dotfiles') }}"
+    state: directory
+  loop: "{{ dotfiles_result.files }}"
+  when: item.isdir
+
+- name: Copy over dotfiles.
+  template:
+    src: "{{ item.path }}"
+    dest: "~/{{ item.path | relpath('../templates/dotfiles') }}"
+  loop: "{{ dotfiles_result.files }}"
+  when: item.isreg
+  register: copy_results
+
+- name: Run macos script.
+  shell: "{{ script_paths.0 }}"
+  become: yes
+  become_user: "{{ ansible_env.USER }}"
+  when: script_paths
+  vars:
+    script_paths: "{{ copy_results | to_json | from_json | json_query(\"results[?changed && contains(dest, 'macos')].dest\") }}"
+
+- name: Determine installed zsh path.
+  command: which zsh
+  register: zsh_path_result
+
+- name: Ensure homebrew zsh is in /etc/shells.
+  blockinfile:
+    path: /etc/shells
+    insertafter: EOF
+    block: |
+      {{ zsh_path_result.stdout }}
+  become: yes
+  become_user: root
+
+- name: Change shell to zsh.
+  shell: chsh -s $(which zsh)
+  when: ansible_env.SHELL != zsh_path_result.stdout
+
+- name: Install iTerm2 shell integration.
+  get_url:
+    url: https://iterm2.com/shell_integration/{{ item }}
+    dest: ~/.iterm2_shell_integration.{{ item }}
+  loop:
+    - bash
+    - zsh

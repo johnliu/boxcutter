@@ -1,0 +1,17 @@
+# Don't write python files
+export PYTHONDONTWRITEBYTECODE=1
+
+# fasd plugin
+eval "$(fasd --init auto)"
+
+# fzf plugin
+[ -f ~/.fzf.$RC_SHELL ] && source ~/.fzf.$RC_SHELL
+
+# iterm2 integration
+source ~/.iterm2_shell_integration.$RC_SHELL
+
+# dircolors
+eval `gdircolors ~/.dircolors`
+
+# default editor
+export EDITOR=vim

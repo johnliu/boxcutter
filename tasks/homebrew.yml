@@ -1,0 +1,47 @@
+---
+- homebrew:
+    update_homebrew: yes
+    upgrade_all: yes
+
+- homebrew_tap:
+    name: beeftornado/rmtree
+
+- homebrew:
+    name: "{{ item }}"
+  loop:
+    - antigen
+    - bash-completion
+    - coreutils
+    - fzf
+    - fasd
+    - hub
+    - ripgrep
+    - zsh
+
+- name: Run homebrew caveats.
+  shell: "{{ item }}"
+  loop:
+    - "$(brew --prefix)/opt/fzf/install"
+
+- homebrew_cask:
+    name: "{{ item }}"
+  loop:
+    - 1password
+    - appcleaner
+    - bettertouchtool
+    - dash
+    - discord
+    - font-inconsolata-dz-for-powerline
+    - google-chrome
+    - iterm2
+    - karabiner-elements
+    - logitech-gaming-software
+    - messenger
+    - spotify
+
+- homebrew_cask:
+    name: "{{ item }}"
+  loop:
+    - nvidia-web-driver
+    - clover-configurator
+  when: is_hackintosh

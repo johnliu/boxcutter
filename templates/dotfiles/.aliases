@@ -1,0 +1,16 @@
+alias sudo="sudo "
+
+# Python
+alias venv="source venv/bin/activate"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles 1; killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles 0; killall Finder"
+
+if type "gls" &> /dev/null; then
+  alias ls="gls --color"
+fi
+
+if type "hub" &> /dev/null; then
+  alias git="hub"
+fi

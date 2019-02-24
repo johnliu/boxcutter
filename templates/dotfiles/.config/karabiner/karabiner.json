@@ -26,7 +26,8 @@
                                             "^com\\.apple\\.Xcode$",
                                             "^com\\.apple\\.dt\\.Xcode$",
                                             "^com\\.github\\.atom$",
-                                            "^com\\.jetbrains\\.*"
+                                            "^com\\.jetbrains\\.*",
+                                            "^com\\.microsoft\\.VSCode"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -55,7 +56,8 @@
                                             "^com\\.apple\\.Xcode$",
                                             "^com\\.apple\\.dt\\.Xcode$",
                                             "^com\\.github\\.atom$",
-                                            "^com\\.jetbrains\\.*"
+                                            "^com\\.jetbrains\\.*",
+                                            "^com\\.microsoft\\.VSCode"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }

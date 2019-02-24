@@ -43,7 +43,7 @@
 - name: Create bootstrapped file.
   file:
     path: ~/.bootstrapped
-    state: file
+    state: touch
 
 - name: Determine installed zsh path.
   command: which zsh

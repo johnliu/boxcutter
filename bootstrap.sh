@@ -8,6 +8,6 @@ mkdir -p ~/Projects
 cd ~/Projects
 git clone https://github.com/johnliu/setup.git
 
-cd setup
-make
+echo "Configure the machine via defaults.yml and run make."
+open -a Terminal ~/Projects/setup
 

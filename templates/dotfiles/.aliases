@@ -14,3 +14,10 @@ fi
 if type "hub" &> /dev/null; then
   alias git="hub"
 fi
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias -- -="cd -"
+
+alias gst="git status"
+

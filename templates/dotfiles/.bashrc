@@ -19,9 +19,6 @@ source ~/.bash_prompt
 
 # Aliases
 source ~/.aliases
-alias ..="cd .."
-alias ...="cd ../.."
-alias -- -="cd -"
 
 
 # MISC

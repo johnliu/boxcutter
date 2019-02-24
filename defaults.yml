@@ -2,12 +2,9 @@
 
 # General
 computer_name: cinnamon
-is_hackintosh: yes
+is_hackintosh: no
 
 # git config
 gitconfig_name: John Liu
 gitconfig_email: johnyuhanliu@gmail.com
 gitconfig_github: johnliu
-
-# Run settings
-first_run: no

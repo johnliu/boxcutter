@@ -5,7 +5,7 @@ if ! xcode-select -p &> /dev/null; then
 fi
 
 # Sleep until xcode-select finishes.
-until ! xcode-select -p &> /dev/null; do
+until xcode-select -p &> /dev/null; do
     echo "Waiting for command line tools to finish installation."
     sleep 1;
 done

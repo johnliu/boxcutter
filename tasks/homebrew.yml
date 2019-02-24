@@ -4,7 +4,10 @@
     upgrade_all: yes
 
 - homebrew_tap:
-    name: beeftornado/rmtree
+    name: "{{ item }}"
+  loop:
+    - beeftornado/rmtree
+    - homebrew/cask-fonts
 
 - homebrew:
     name: "{{ item }}"
@@ -39,6 +42,12 @@
     - logitech-gaming-software
     - messenger
     - spotify
+
+- homebrew_tap:
+    name: "{{ item }}"
+  loop:
+    - homebrew/cask-drivers
+  when: is_hackintosh
 
 - homebrew_cask:
     name: "{{ item }}"

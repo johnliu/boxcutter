@@ -8,3 +8,6 @@ is_hackintosh: yes
 gitconfig_name: John Liu
 gitconfig_email: johnyuhanliu@gmail.com
 gitconfig_github: johnliu
+
+# Run settings
+first_run: no

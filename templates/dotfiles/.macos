@@ -279,7 +279,7 @@ defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array
+[[ $FIRST_RUN ]] && defaults write com.apple.dock persistent-apps -array
 
 # Show only open applications in the Dock
 #defaults write com.apple.dock static-only -bool true
@@ -550,7 +550,6 @@ for app in "Activity Monitor" \
 	       "Photos" \
 	       "Safari" \
 	       "SystemUIServer" \
-	       "Terminal" \
 	       "iCal"; do
 	       killall "$app" &> /dev/null
 done

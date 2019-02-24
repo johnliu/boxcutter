@@ -31,7 +31,7 @@
     name: "{{ item }}"
   loop:
     - 1password
-    - adobe-creative-cloud
+    # - adobe-creative-cloud
     - appcleaner
     - bettertouchtool
     - dash
@@ -40,7 +40,7 @@
     - google-chrome
     - iterm2
     - karabiner-elements
-    - logitech-gaming-software
+    # - logitech-gaming-software
     - messenger
     - spotify
     - visual-studio-code

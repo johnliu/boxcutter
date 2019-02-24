@@ -27,6 +27,7 @@
     name: "{{ item }}"
   loop:
     - 1password
+    - adobe-creative-cloud
     - appcleaner
     - bettertouchtool
     - dash

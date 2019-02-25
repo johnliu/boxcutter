@@ -1,13 +1,13 @@
-setup
-=====
+boxcutter
+=========
 
-Sets up my mac.
+Sets up up my mac.
 
 Installation
 ------------
 
 ```sh
-bash <(curl -s https://raw.githubusercontent.com/johnliu/setup/master/bootstrap.sh)
+bash <(curl -s https://raw.githubusercontent.com/johnliu/boxcutter/master/bootstrap.sh)
 ```
 
 This script will clone the setup directory to ~/Projects. After cloning the setup directory,

@@ -86,6 +86,9 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Automatically show/hide the menu bar.
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
 
 # SSD-specific Tweaks
 # ===================

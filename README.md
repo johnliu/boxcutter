@@ -10,9 +10,9 @@ Installation
 bash <(curl -s https://raw.githubusercontent.com/johnliu/boxcutter/master/bootstrap.sh)
 ```
 
-This script will clone the setup directory to ~/Projects. After cloning the setup directory,
-it will open a new Terminal instance at ~/Projects/setup. Configure the machine's `defaults.yml`
-file and run `make`.
+This script will clone the setup directory to ~/Projects/johnliu. After cloning the setup directory,
+it will open a new Terminal instance at ~/Projects/johnliu/boxcutter. Configure the machine's 
+`defaults.yml` file and run `make`.
 
 TODO
 ----

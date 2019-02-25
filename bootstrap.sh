@@ -10,9 +10,9 @@ until xcode-select -p &> /dev/null; do
     sleep 1;
 done
 
-mkdir -p ~/Projects/$USER
-cd ~/Projects/$USER
+mkdir -p ~/Projects/johnliu
+cd ~/Projects/johnliu
 git clone https://github.com/johnliu/boxcutter.git
 
 echo "Configure the machine via defaults.yml and run make."
-open -a Terminal ~/Projects/$USER/boxcutter
+open -a Terminal ~/Projects/johnliu/boxcutter

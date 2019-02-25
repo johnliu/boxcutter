@@ -17,5 +17,6 @@ it will open a new Terminal instance at ~/Projects/johnliu/boxcutter. Configure 
 TODO
 ----
 
-[x] Fix unknown developers thing.
-[x] Fix become not working as expected.
+- [ ] Fix unknown developers thing.
+- [ ] Fix become not working as expected.
+- [ ] Separate out logic for running .macos script from syncing templates.

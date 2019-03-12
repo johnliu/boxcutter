@@ -21,6 +21,7 @@
     - hub
     - ripgrep
     - zsh
+    - pipenv
 
 - name: Run homebrew caveats.
   shell: "{{ item }}"
@@ -44,6 +45,7 @@
     - messenger
     - spotify
     - visual-studio-code
+    - slack
 
 - homebrew_cask:
     name: "{{ item }}"

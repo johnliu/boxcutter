@@ -23,7 +23,6 @@
     - zsh
     - pipenv
     - pyenv
-    - pre-commit
 
 - name: Run homebrew caveats.
   shell: "{{ item }}"

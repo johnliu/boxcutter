@@ -10,6 +10,9 @@ eval "$(fasd --init auto)"
 # iterm2 integration
 source ~/.iterm2_shell_integration.$RC_SHELL
 
+# pyenv
+eval "$(pyenv init -)"
+
 # dircolors
 eval `gdircolors ~/.dircolors`
 

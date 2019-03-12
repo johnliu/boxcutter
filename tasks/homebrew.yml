@@ -22,6 +22,7 @@
     - ripgrep
     - zsh
     - pipenv
+    - pyenv
 
 - name: Run homebrew caveats.
   shell: "{{ item }}"

@@ -2,6 +2,7 @@ export RC_SHELL=zsh
 
 # Theme
 DEFAULT_USER={{ ansible_env.USER }}
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir pyenv virtualenv vcs)
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/{{ ansible_env.USER }}/powerlevel9kv
 
 # Plugins

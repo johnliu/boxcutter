@@ -16,3 +16,6 @@
 .Spotlight-V100
 .Trashes
 .fseventsd
+
+# Environment files
+.envrc

@@ -13,6 +13,9 @@ source ~/.iterm2_shell_integration.$RC_SHELL
 # pyenv
 eval "$(pyenv init -)"
 
+# direnv
+eval "$(direnv hook $RC_SHELL)"
+
 # dircolors
 eval `gdircolors ~/.dircolors`
 

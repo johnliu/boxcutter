@@ -114,7 +114,7 @@ endif
 nnoremap <silent> <leader>n :NERDTreeToggle<cr>
 
 " junegunn/fzf.vim
-nnoremap <C-r> :Rg<cr>
+nnoremap <C-f> :Rg<cr>
 nnoremap <C-t> :FZF<cr>
 
 " Other Mappings

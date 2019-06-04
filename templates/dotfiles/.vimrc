@@ -62,6 +62,7 @@ let g:fzf_colors =
 
 " scrooloose/nerdtree
 let g:NERDTreeNodeDelimiter = "\u00a0"
+let g:NERDTreeShowHidden = 1
 
 " scrooloose/nerdcommenter
 let g:NERDSpaceDelims = 1

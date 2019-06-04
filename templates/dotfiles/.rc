@@ -6,6 +6,8 @@ eval "$(fasd --init auto)"
 
 # fzf plugin
 [ -f ~/.fzf.$RC_SHELL ] && source ~/.fzf.$RC_SHELL
+export FZF_DEFAULT_COMMAND='find .'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # iterm2 integration
 source ~/.iterm2_shell_integration.$RC_SHELL

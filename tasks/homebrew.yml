@@ -54,4 +54,4 @@
   loop:
     - nvidia-web-driver
     - clover-configurator
-  when: is_hackintosh
+  when: is_hackintosh | bool

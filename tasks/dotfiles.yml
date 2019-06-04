@@ -36,7 +36,7 @@
   shell: "{% if not bootstrapped_stat.stat.exists %}FIRST_RUN=1 {% endif %}{{ script_paths.0 }}"
   become: yes
   become_user: "{{ ansible_env.USER }}"
-  when: script_paths
+  when: script_paths | bool
   vars:
     script_paths: "{{ copy_results | to_json | from_json | json_query(\"results[?changed && contains(dest, 'macos')].dest\") }}"
 

@@ -556,8 +556,8 @@ end)
 
 local indicatorRadius = 30
 local indicatorArrowHalfWidth = 15
-local indicatorArrowHeight = 30
-local indicatorArrowOffset = 8
+local indicatorArrowHeight = 35
+local indicatorArrowOffset = 5
 
 function drawScrollIndicator(scrollIndicator, x, y, directionX, directionY, scrollWeight)
     directionX = directionX or 0
@@ -568,7 +568,8 @@ function drawScrollIndicator(scrollIndicator, x, y, directionX, directionY, scro
         { x = -indicatorArrowHalfWidth * scrollWeight, y = 0 },
         { x = 0, y = -indicatorArrowHeight * scrollWeight },
         { x = indicatorArrowHalfWidth * scrollWeight, y = 0 },
-        { x = 0, y = -indicatorArrowOffset }
+        { x = 0, y = -indicatorArrowOffset },
+        { x = -indicatorArrowHalfWidth * scrollWeight, y = 0 },
     }
 
     if not scrollIndicator then
@@ -585,16 +586,32 @@ function drawScrollIndicator(scrollIndicator, x, y, directionX, directionY, scro
         scrollIndicator:appendElements(
             {
                 type = 'circle',
-                action = 'fill',
-                fillColor = hex2table(color, 0.5),
+                action = 'strokeAndFill',
+                fillColor = { black = 1.0 },
                 radius = 3,
-                center = { x = 0, y = 0 }
+                center = { x = 0, y = 0 },
+                strokeWidth = 1,
+                strokeColor = { white = 1 },
+                shadow = {
+                    blurRadius = 2,
+                    alpha = 0.05,
+                    offset = { h = -0.5, w = 0 }
+                },
+                withShadow = true
             },
             {
                 type = 'segments',
-                action = 'fill',
-                fillColor = hex2table(color),
-                coordinates = coordinates
+                action = 'strokeAndFill',
+                fillColor = { black = 1.0 },
+                coordinates = coordinates,
+                strokeWidth = 1,
+                strokeColor = { white = 1 },
+                shadow = {
+                    blurRadius = 2,
+                    alpha = 0.05,
+                    offset = { h = -0.5, w = 0 }
+                },
+                withShadow = true
             }
         )
     else
@@ -624,7 +641,7 @@ local scrollIndicator = nil
 
 function calculateScrollRate(initial, current)
     local direction = initial - current > 0 and 1 or -1
-    return direction * math.min(math.floor(math.abs(initial - current) * 0.05), maxScrollRate)
+    return direction * math.min(math.floor(math.abs(initial - current) * 0.025), maxScrollRate)
 end
 
 function calculateScrollWeight(xScrollRate, yScrollRate)
@@ -685,7 +702,7 @@ middleClickListener = hs.eventtap.new(
                 end
             end
 
-            return true, {}
+            return false, {}
         else
             if eventType == events.types.mouseMoved and not isToggled then
                 return false, {}

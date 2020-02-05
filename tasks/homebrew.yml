@@ -1,7 +1,7 @@
 ---
 - homebrew:
     update_homebrew: yes
-    upgrade_all: yes
+    upgrade_all: no
 
 - homebrew_tap:
     name: "{{ item }}"
@@ -37,14 +37,16 @@
     # - adobe-creative-cloud
     - appcleaner
     - bettertouchtool
+    - caprine
     - dash
     - discord
+    - docker
     - font-inconsolata-dz-for-powerline
     - google-chrome
     - iterm2
+    - hammerspoon
     - karabiner-elements
     # - logitech-gaming-software
-    - messenger
     - spotify
     - visual-studio-code
     - slack

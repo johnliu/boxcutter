@@ -179,12 +179,12 @@ end
 
 canvas.showOverlay = function(self)
     self:updateOverlay()
-    self.overlay:show(0.1)
+    self.overlay:show()
     return self
 end
 
 canvas.hideOverlay = function(self)
-    self.overlay:hide(0.15)
+    self.overlay:hide()
     return self
 end
 
@@ -207,12 +207,12 @@ end
 
 canvas.showWindowSelector = function(self, window)
     self:updateWindowSelector(window)
-    self.windowSelector:show(0.1)
+    self.windowSelector:show()
     return self
 end
 
 canvas.hideWindowSelector = function(self)
-    self.windowSelector:hide(0.15)
+    self.windowSelector:hide()
     return self
 end
 

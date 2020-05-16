@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
 
 " Languages and Syntax
 Plug 'othree/html5.vim'
+Plug 'elixir-editors/vim-elixir'
 
 " UI Upgrades
 Plug 'scrooloose/nerdtree'
